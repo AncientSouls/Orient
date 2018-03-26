@@ -10,6 +10,8 @@
 ### JsonOrient
 
 - each fetching is wrappable for restriction purposes
+- by default class Query is not validate data
+- you can mix Query class with class ValidatedQuery for assertion invalid argument types
 - supported constructions
   - [x] `= > >= < <= <> is in`
   - [ ] `between contains containsall`
@@ -36,6 +38,9 @@
   - [ ] `skip`
   - [ ] `limit`
   - [x] `select`
+  - [ ] `insert`
+  - [ ] `update`
+  - [ ] `delete`
 - supported functions
   - [ ] `in`
   - [ ] `out`
