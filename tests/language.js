@@ -21,6 +21,7 @@ function default_1() {
         it('field', () => {
             const q = new validatable_1.ValidatableQuery();
             chai_1.assert.equal(q.field('aB0'), `['aB0']`);
+            chai_1.assert.equal(q.field('@rid'), `.@rid`);
             chai_1.assert.throws(() => q.field(':'));
         });
         describe('fetch', () => {
@@ -35,7 +36,7 @@ function default_1() {
         });
         it('projection', () => {
             const q = new validatable_1.ValidatableQuery();
-            (r => chai_1.assert.equal(r, `@this['a']['b']['c'] as x`))(q.projection({ fetch: l.fields('a', 'b', 'c'), as: 'x' }));
+            (r => chai_1.assert.equal(r, `@this['a']['b'].@rid as x`))(q.projection({ fetch: l.fields('a', 'b', '@rid'), as: 'x' }));
         });
         it('from', () => {
             const q = new validatable_1.ValidatableQuery();

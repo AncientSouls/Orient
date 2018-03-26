@@ -58,7 +58,11 @@ export function mixin<T extends TClass<IInstance>>(
       }
       return key;
     }
+
+    public orienFieldTypes = ['@rid','@class','@version','@fields','@type'];
+
     field(field) {
+      if (_.includes(this.orienFieldTypes, field)) return `.${field}`;
       return `['${this.key(field)}']`;
     }
     fetch(fetch) {

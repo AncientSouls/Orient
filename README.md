@@ -20,11 +20,7 @@ Restrictable orient sql query generator.
   - [ ] `containsvalue containskey`
   - [ ] `containstext`
   - [ ] `matches`
-  - [ ] `@rid`
-  - [ ] `@class`
-  - [ ] `@version`
-  - [ ] `@fields`
-  - [ ] `@type`
+  - [x] `@rid @class @version @fields @type`
   - [x] `data`
     - [x] `boolean`
     - [x] `number`

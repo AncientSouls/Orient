@@ -40,8 +40,8 @@ export default function () {
     });
     it('projection', () => {
       const q = new ValidatableQuery();
-      (r => assert.equal(r, `@this['a']['b']['c'] as x`))
-      (q.projection({ fetch: l.fields('a', 'b', 'c'), as: 'x' }));
+      (r => assert.equal(r, `@this['a']['b'].@rid as x`))
+      (q.projection({ fetch: l.fields('a', 'b', '@rid'), as: 'x' }));
     });
     it('from', () => {
       const q = new ValidatableQuery();
