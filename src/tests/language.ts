@@ -23,6 +23,7 @@ export default function () {
     it('field', () => {
       const q = new ValidatableQuery();
       assert.equal(q.field('aB0'), `['aB0']`);
+      assert.equal(q.field('@rid'), `.@rid`);
       assert.throws(() => q.field(':'));
     });
     describe('fetch', () => {
