@@ -12,6 +12,8 @@ export interface IQuery {
     fetches(fetches: t.IFetch[]): string;
     projection(projection: t.IProjection): string;
     from(from: t.TFrom | any): string;
+    where(where: t.ILogical): string;
+    lets(lets: t.ILet[] | void): string;
     select(select: t.ISelect): string;
     let(lets: t.ILet): string;
     logicalTypes: string[];

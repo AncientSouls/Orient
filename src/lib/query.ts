@@ -19,6 +19,8 @@ export interface IQuery {
   fetches(fetches: t.IFetch[]): string;
   projection(projection: t.IProjection): string;
   from(from: t.TFrom|any): string;
+  where(where: t.ILogical): string;
+  lets(lets: t.ILet[]|void): string;
   select(select: t.ISelect): string;
   let(lets: t.ILet): string;
   logicalTypes: string[];
@@ -100,6 +102,13 @@ export function mixin<T extends TClass<IInstance>>(
 
       throw new Error(`From not matched as TKey, TRid or TRid[]`);
     }
+    where(where) {
+      return this.logical(where);
+    }
+    lets(lets) {
+      if (!lets) return '';
+      return this.let(lets);
+    }
     select(select) {
       let result = `select ${
         _.map(select.what, w => this.projection(w))
@@ -107,8 +116,11 @@ export function mixin<T extends TClass<IInstance>>(
         this.from(select.from)
       }`;
 
+      const lets = this.lets(select.let);
+      if (lets) result += ` let ${lets}`;
+
       if (select.where) {
-        result += ` where ${this.logical(select.where)}`;
+        result += ` where ${this.where(select.where)}`;
       }
 
       return result;
