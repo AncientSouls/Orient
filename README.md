@@ -7,6 +7,10 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/59e712651c484fb2a179961c3ee9fc23)](https://www.codacy.com/app/ivansglazunov/Orient?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=AncientSouls/Orient&amp;utm_campaign=Badge_Grade)
 [![Read the Docs](https://img.shields.io/readthedocs/pip.svg)](https://ancientsouls.github.io/)
 
+### About
+
+**Temporary depricated, postponed to the implementation of ancient-postgresql**
+
 ### Query
 
 Restrictable orient sql query generator.
